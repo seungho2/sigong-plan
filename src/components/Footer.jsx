@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Mail, Facebook } from 'lucide-react';
+import { Instagram, Mail, Facebook, MapPin } from 'lucide-react';
 
 
 const Footer = () => {
@@ -22,14 +22,16 @@ const Footer = () => {
                 {/* Column 2: Location */}
                 <div>
                     <h3 className="text-base font-bold mb-3">{t.footer.location}</h3>
-                    <p className="text-[#1A1A1A] leading-relaxed">
+                    <p className="text-[#1A1A1A] leading-relaxed flex items-center gap-2">
+                        {t.footer.address}
                         <a
                             href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-[var(--color-secondary)] transition-colors"
+                            className="text-gray-700 hover:text-[var(--color-secondary)] transition-colors"
+                            aria-label="View on Google Maps"
                         >
-                            {t.footer.address}
+                            <MapPin size={18} />
                         </a>
                     </p>
                 </div>

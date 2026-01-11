@@ -42,7 +42,9 @@ const Header = () => {
             <div className="container mx-auto pl-6 pr-10 flex items-center">
                 {/* Logo */}
                 <div className="flex items-center gap-3 mr-12">
-                    <img src={logo} alt="Si-Gong Plan Logo" className="h-16 w-auto object-contain" />
+                    <a href="#hero" className="block cursor-pointer">
+                        <img src={logo} alt="Si-Gong Plan Logo" className="h-16 w-auto object-contain" />
+                    </a>
                 </div>
 
                 {/* Desktop Nav - Right Aligned */}
