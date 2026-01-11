@@ -55,7 +55,7 @@ export const translations = {
       contactInfo: "Contact",
       address: "3404 Av. Prud'homme, Montréal, QC H4A 3H5",
       phone: "+1 (514) 814-6519",
-      email: "contact@sigongplan.com"
+      email: "sigongplan123@gmail.com"
     }
   },
   kr: {
@@ -114,7 +114,7 @@ export const translations = {
       contactInfo: "연락처",
       address: "3404 Av. Prud'homme, Montréal, QC H4A 3H5",
       phone: "+1 (514) 814-6519",
-      email: "contact@sigongplan.com"
+      email: "sigongplan123@gmail.com"
     }
   },
   fr: {
@@ -173,7 +173,7 @@ export const translations = {
       contactInfo: "Contact",
       address: "3404 Av. Prud'homme, Montréal, QC H4A 3H5",
       phone: "+1 (514) 814-6519",
-      email: "contact@sigongplan.com"
+      email: "sigongplan123@gmail.com"
     }
   }
 };
