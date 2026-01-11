@@ -54,7 +54,8 @@ const Header = () => {
                 </nav>
 
                 {/* Language Switcher */}
-                <div className="hidden md:flex items-center gap-2 border-l pl-4 border-gray-300">
+                {/* Language Switcher */}
+                <div className="flex items-center gap-2 ml-auto md:ml-0 border-none md:border-l pl-0 md:pl-4 border-gray-300">
                     <Globe size={18} className="text-gray-500" />
                     <select
                         value={language}
@@ -68,7 +69,8 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <button className="md:hidden ml-auto" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                {/* Mobile Menu Toggle */}
+                <button className="md:hidden ml-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
@@ -80,15 +82,7 @@ const Header = () => {
                     <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.services}</a>
                     <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.about}</a>
                     <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.contact}</a>
-                    <hr />
-                    <div className="flex items-center gap-4">
-                        <span className="text-sm font-medium">Language:</span>
-                        <div className="flex gap-2">
-                            <button onClick={() => switchLanguage('fr')} className={`text-sm ${language === 'fr' ? 'font-bold text-[var(--color-secondary)]' : ''}`}>FR</button>
-                            <button onClick={() => switchLanguage('en')} className={`text-sm ${language === 'en' ? 'font-bold text-[var(--color-secondary)]' : ''}`}>EN</button>
-                            <button onClick={() => switchLanguage('kr')} className={`text-sm ${language === 'kr' ? 'font-bold text-[var(--color-secondary)]' : ''}`}>KR</button>
-                        </div>
-                    </div>
+
                 </div>
             )}
         </header>
