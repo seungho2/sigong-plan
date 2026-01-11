@@ -25,16 +25,8 @@ const Services = () => {
             icon: <Hammer size={32} />,
             content: {
                 ...t.services.basic,
-                // Dummy detailed content for demo
-                image: serviceBasicImage,
-                detailedDesc: "Our Basic Service package is perfect for keeping your property in top condition without the hassle. We handle the small but essential tasks that make a big difference in your daily life.",
-                features: [
-                    "General repairs (leaky faucets, squeaky doors)",
-                    "Light fixture installation and bulb replacement",
-                    "Drywall patching and painting touch-ups",
-                    "Furniture assembly and mounting",
-                    "Caulking and sealing for bathrooms/kitchens"
-                ]
+                // Image for demo
+                image: serviceBasicImage
             }
         },
         {

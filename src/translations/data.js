@@ -15,7 +15,15 @@ export const translations = {
       title: "Our Services",
       basic: {
         title: "Basic Service",
-        desc: "Essential maintenance and small repairs for your home or office."
+        desc: "Essential maintenance and small repairs for your home or office.",
+        detailedDesc: "Our Basic Service package is perfect for keeping your property in top condition without the hassle. We handle the small but essential tasks that make a big difference in your daily life.",
+        features: [
+          "General repairs (leaky faucets, squeaky doors)",
+          "Light fixture installation and bulb replacement",
+          "Drywall patching and painting touch-ups",
+          "Furniture assembly and mounting",
+          "Caulking and sealing for bathrooms/kitchens"
+        ]
       },
       intermediate: {
         title: "Intermediate Service",
@@ -74,7 +82,15 @@ export const translations = {
       title: "제공 서비스",
       basic: {
         title: "기본 서비스",
-        desc: "주택 및 사무실을 위한 필수 유지보수 및 소규모 수리."
+        desc: "주택 및 사무실을 위한 필수 유지보수 및 소규모 수리.",
+        detailedDesc: "기본 서비스 패키지는 번거로움 없이 공간을 최상의 상태로 유지하기 위한 완벽한 솔루션입니다. 일상생활에 큰 차이를 만드는 작지만 필수적인 작업들을 처리해 드립니다.",
+        features: [
+          "일반 수리 (누수, 문 수리 등)",
+          "조명 설치 및 전구 교체",
+          "벽면 보수 및 페인트 터치업",
+          "가구 조립 및 설치",
+          "주방/욕실 실리콘 코킹 작업"
+        ]
       },
       intermediate: {
         title: "중급 서비스",
@@ -133,7 +149,15 @@ export const translations = {
       title: "Nos Services",
       basic: {
         title: "Service de base",
-        desc: "Entretien essentiel et petites réparations pour votre maison ou bureau."
+        desc: "Entretien essentiel et petites réparations pour votre maison ou bureau.",
+        detailedDesc: "Notre forfait de service de base est parfait pour maintenir votre propriété en excellent état sans tracas. Nous nous occupons des tâches petites mais essentielles qui font une grande différence dans votre vie quotidienne.",
+        features: [
+          "Réparations générales (robinets qui fuient, portes qui grincent)",
+          "Installation de luminaires et remplacement d'ampoules",
+          "Réparation de cloisons sèches et retouches de peinture",
+          "Assemblage et montage de meubles",
+          "Calfeutrage et scellement pour salles de bain/cuisines"
+        ]
       },
       intermediate: {
         title: "Service intermédiaire",
