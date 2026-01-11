@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Mail } from 'lucide-react';
+import { Instagram, Mail, Facebook } from 'lucide-react';
 
 
 const Footer = () => {
@@ -44,8 +44,14 @@ const Footer = () => {
                 <div className="flex items-center gap-4">
                     <span className="uppercase tracking-wide text-[10px]">{t.footer.social}</span>
                     <div className="flex gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors">
+                            <Facebook size={18} />
+                        </a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors">
                             <Instagram size={18} />
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors" aria-label="Pinterest">
+                            <div className="w-[18px] h-[18px] rounded-full border-2 border-current flex items-center justify-center text-[10px] font-bold">P</div>
                         </a>
                         <a href={`mailto:${t.footer.email}`} className="hover:text-[var(--color-secondary)] transition-colors">
                             <Mail size={18} />
