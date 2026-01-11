@@ -23,7 +23,14 @@ const Footer = () => {
                 <div>
                     <h3 className="text-base font-bold mb-3">{t.footer.location}</h3>
                     <p className="text-[#1A1A1A] leading-relaxed">
-                        {t.footer.address}
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[var(--color-secondary)] transition-colors"
+                        >
+                            {t.footer.address}
+                        </a>
                     </p>
                 </div>
 
