@@ -7,9 +7,9 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Expert Construction and Maintenance Solutions",
-      subtitle: "We create spaces that blend functionality with aesthetic beauty. Your trusted partner in Montreal.",
-      cta: "Learn More"
+      title: "Your space perfected by expert hands",
+      subtitle: "Turn your outdated kitchen, uncomfortable bathroom, and worn flooring into the space you've always wanted. Our precise craftsmanship and aesthetic sensibility will create a true sanctuary in your home.",
+      cta: "Get Consultation"
     },
     services: {
       title: "Our Services",
@@ -66,9 +66,9 @@ export const translations = {
       contact: "문의하기"
     },
     hero: {
-      title: "전문적인 시공 및 유지보수 솔루션",
-      subtitle: "기능성과 아름다움이 조화된 공간을 만듭니다. 몬트리올의 신뢰할 수 있는 파트너.",
-      cta: "더 알아보기"
+      title: "전문가의 손으로 당신의 공간을 완성합니다",
+      subtitle: "낡은 주방, 불편한 욕실, 닳은 바닥재를 당신이 원하는 공간으로 변화시킵니다. 정밀한 기술과 미적 감각으로 당신의 집을 진정한 쉼터로 만들어드립니다.",
+      cta: "상담받기"
     },
     services: {
       title: "제공 서비스",
@@ -125,9 +125,9 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Solutions expertes de construction et d'entretien",
-      subtitle: "Nous créons des espaces alliant fonctionnalité et beauté esthétique. Votre partenaire de confiance à Montréal.",
-      cta: "En savoir plus"
+      title: "Votre espace transformé par l'expertise",
+      subtitle: "Transformez votre cuisine vieillotte, votre salle de bain inconfortable et vos planchers usés en l'espace que vous avez toujours voulu. Notre savoir-faire précis et notre sensibilité esthétique transformeront votre maison en un véritable refuge.",
+      cta: "Obtenir une consultation"
     },
     services: {
       title: "Nos Services",

@@ -15,7 +15,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="z-10 order-2 md:order-1"
                 >
-                    <h1 className="text-4xl md:text-6xl mb-6 leading-tight text-[#1A1A1A]">
+                    <h1 className={`text-4xl md:text-6xl mb-8 leading-tight text-[#1A1A1A] ${(t.hero.title.charCodeAt(0) < 128) ? 'hero-title-styled' : ''}`}>
                         {t.hero.title}
                     </h1>
 
