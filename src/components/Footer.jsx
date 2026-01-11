@@ -33,6 +33,9 @@ const Footer = () => {
                     <p className="text-[#1A1A1A] leading-relaxed">
                         {t.footer.phone}
                     </p>
+                    <p className="text-[#1A1A1A] leading-relaxed">
+                        {t.footer.email}
+                    </p>
                 </div>
             </div>
 
