@@ -7,15 +7,15 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section id="hero" className="relative h-screen min-h-[700px] flex items-center bg-[#F5F0EB]">
-            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-32 md:pt-20">
+        <section id="hero" className="relative min-h-screen md:h-screen md:min-h-[700px] flex items-center bg-[#F5F0EB] pt-24 md:pt-0">
+            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="z-10"
+                    className="z-10 order-2 md:order-1"
                 >
-                    <h1 className="text-3xl md:text-6xl mb-6 leading-tight text-[#1A1A1A]">
+                    <h1 className="text-4xl md:text-6xl mb-6 leading-tight text-[#1A1A1A]">
                         {t.hero.title}
                     </h1>
 
@@ -31,7 +31,7 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative h-[500px] w-full"
+                    className="relative h-[300px] md:h-[500px] w-full order-1 md:order-2"
                 >
                     <img
                         src={heroImage}
