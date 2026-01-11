@@ -7,7 +7,7 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section id="hero" className="relative min-h-screen md:h-screen md:min-h-[700px] flex items-center bg-[#F5F0EB] pt-24 md:pt-0">
+        <section id="hero" className="relative min-h-screen md:h-screen md:min-h-[700px] flex items-center bg-[#F5F0EB] pt-24 pb-16 md:py-0">
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
