@@ -43,7 +43,7 @@ const Contact = () => {
         <section id="contact" className="bg-[#1A1A1A] text-white pt-24 pb-24">
             <div className="container mx-auto px-6 mb-20">
                 <div className="max-w-2xl">
-                    <h2 className="text-3xl md:text-4xl mb-8 font-bold text-white mb-12">{t.contact.title}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-20">{t.contact.title}</h2>
 
                     {/* Success Message - Shown ABOVE form, not replacing it */}
                     {status === 'success' && (

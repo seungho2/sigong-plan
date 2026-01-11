@@ -36,7 +36,7 @@ const Hero = () => {
                     <img
                         src={heroImage}
                         alt="Modern Interior"
-                        className="w-full h-full object-cover rounded shadow-2xl"
+                        className="w-full h-full object-cover rounded-xl shadow-[15px_15px_30px_rgba(0,0,0,0.25)]"
                     />
                 </motion.div>
             </div>

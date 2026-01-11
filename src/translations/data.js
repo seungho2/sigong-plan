@@ -13,6 +13,7 @@ export const translations = {
     },
     services: {
       title: "Our Services",
+      intro: "From residential to commercial spaces, small repairs to large-scale projects, experience our expert comprehensive services delivered with precision and care.",
       basic: {
         title: "Basic Service",
         desc: "Essential maintenance and small repairs for your home or office.",
@@ -27,17 +28,34 @@ export const translations = {
       },
       intermediate: {
         title: "Intermediate Service",
-        desc: "Renovation projects and interior updates to refresh your space."
+        desc: "Renovation projects and interior updates to refresh your space.",
+        detailedDesc: "Ready for a change? Our Intermediate Service focuses on aesthetic updates and functional improvements that refresh your space without major structural work.",
+        features: [
+          "Flooring installation (laminate, vinyl, tile)",
+          "Cabinet refacing and hardware updates",
+          "Full room painting and wallpaper installation",
+          "Backsplash installation",
+          "Custom shelving solutions"
+        ]
       },
       advanced: {
         title: "Advanced Service",
-        desc: "Complete remodeling and architectural solutions from start to finish."
+        desc: "Complete remodeling and architectural solutions from start to finish.",
+        detailedDesc: "Transform your vision into reality. Our Advanced Service covers comprehensive remodeling projects involving structural changes, plumbing, and electrical work.",
+        features: [
+          "Complete kitchen and bathroom remodels",
+          "Structural wall removal and open concept layout",
+          "Basement finishing and waterproofing",
+          "Electrical and plumbing system upgrades",
+          "Project management from design to completion"
+        ]
       },
-      btn: "More"
+      btn: "More",
+      modalBtn: "Inquire Now"
     },
     about: {
       title: "About Our Company",
-      desc: "Based in Montreal, Si-Gong Plan specializes in high-quality interior construction and renovation. We bring your vision to life with precision and care.",
+      desc: "Based in Montreal, SI-GONG PLAN specializes in high-quality interior construction and renovation. We bring your vision to life with precision and care.",
       btn: "Read More"
     },
     contact: {
@@ -80,6 +98,7 @@ export const translations = {
     },
     services: {
       title: "제공 서비스",
+      intro: "주거공간에서 상업공간까지, 소규모 수리부터 대규모 프로젝트까지 전문가의 손길로 완성하는 세심한 토털 서비스를 제공합니다.",
       basic: {
         title: "기본 서비스",
         desc: "주택 및 사무실을 위한 필수 유지보수 및 소규모 수리.",
@@ -94,13 +113,30 @@ export const translations = {
       },
       intermediate: {
         title: "중급 서비스",
-        desc: "공간을 새롭게 바꾸는 리노베이션 및 인테리어 업데이트."
+        desc: "공간을 새롭게 바꾸는 리노베이션 및 인테리어 업데이트.",
+        detailedDesc: "새로운 변화가 필요하신가요? 중급 서비스는 대규모 구조 변경 없이 미적 업데이트와 기능적 개선을 통해 공간을 새롭게 재탄생시킵니다.",
+        features: [
+          "바닥재 시공 (라미네이트, 비닐, 타일)",
+          "캐비닛 리폼 및 하드웨어 교체",
+          "전체 도장 및 도배 작업",
+          "주방 백스플래시 설치",
+          "맞춤형 선반 제작 및 설치"
+        ]
       },
       advanced: {
         title: "고급 서비스",
-        desc: "설계부터 마감까지, 완벽한 리모델링 및 건축 솔루션."
+        desc: "설계부터 마감까지, 완벽한 리모델링 및 건축 솔루션.",
+        detailedDesc: "당신의 비전을 현실로 만들어드립니다. 고급 서비스는 구조 변경, 배관, 전기 작업을 포함한 포괄적인 리모델링 프로젝트를 전문으로 합니다.",
+        features: [
+          "주방 및 욕실 전체 리모델링",
+          "구조 벽 제거 및 오픈 컨셉 레이아웃",
+          "지하실 마감 및 방수 공사",
+          "전기 및 배관 시스템 업그레이드",
+          "설계부터 마감까지 프로젝트 전담 관리"
+        ]
       },
-      btn: "더보기"
+      btn: "더보기",
+      modalBtn: "상담하기"
     },
     about: {
       title: "회사 소개",
@@ -147,6 +183,7 @@ export const translations = {
     },
     services: {
       title: "Nos Services",
+      intro: "Des espaces résidentiels aux commerciaux, des petites réparations aux projets d'envergure, découvrez nos services complets d'experts réalisés avec précision et soin.",
       basic: {
         title: "Service de base",
         desc: "Entretien essentiel et petites réparations pour votre maison ou bureau.",
@@ -161,17 +198,34 @@ export const translations = {
       },
       intermediate: {
         title: "Service intermédiaire",
-        desc: "Projets de rénovation et mises à jour intérieures pour rafraîchir votre espace."
+        desc: "Projets de rénovation et mises à jour intérieures pour rafraîchir votre espace.",
+        detailedDesc: "Prêt pour un changement ? Notre service intermédiaire se concentre sur les mises à jour esthétiques et les améliorations fonctionnelles qui rafraîchissent votre espace sans travaux structurels majeurs.",
+        features: [
+          "Installation de revêtements de sol (stratifié, vinyle, carrelage)",
+          "Refacing d'armoires et mise à jour de la quincaillerie",
+          "Peinture complète et pose de papier peint",
+          "Installation de dosseret (backsplash)",
+          "Solutions d'étagères sur mesure"
+        ]
       },
       advanced: {
         title: "Service avancé",
-        desc: "Remodelage complet et solutions architecturales du début à la fin."
+        desc: "Remodelage complet et solutions architecturales du début à la fin.",
+        detailedDesc: "Transformez votre vision en réalité. Notre service avancé couvre des projets de remodelage complets impliquant des changements structurels, de la plomberie et des travaux d'électricité.",
+        features: [
+          "Remodelage complet de cuisine et salle de bain",
+          "Suppression de murs porteurs et aménagement à aire ouverte",
+          "Finition de sous-sol et imperméabilisation",
+          "Mises à niveau des systèmes électriques et de plomberie",
+          "Gestion de projet de la conception à la réalisation"
+        ]
       },
-      btn: "Plus"
+      btn: "Plus",
+      modalBtn: "Demander une consultation"
     },
     about: {
       title: "Notre Société",
-      desc: "Basé à Montréal, Si-Gong Plan se spécialise dans la construction intérieure et la rénovation de haute qualité. Nous donnons vie à votre vision avec précision et soin.",
+      desc: "Basé à Montréal, SI-GONG PLAN se spécialise dans la construction intérieure et la rénovation de haute qualité. Nous donnons vie à votre vision avec précision et soin.",
       btn: "Lire plus"
     },
     contact: {

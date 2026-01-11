@@ -14,6 +14,8 @@ import { Hammer, Ruler, Building2, ArrowRight } from 'lucide-react';
 import ServiceModal from './ServiceModal';
 import aboutImage from '../assets/interior_detail_wood_1768042299726.png'; // Placeholder image
 import serviceBasicImage from '../assets/service_basic_repair.png'; // New repair image
+import serviceIntermediateImage from '../assets/service_intermediate_sink.png'; // New sink install image
+import serviceAdvancedImage from '../assets/service_advanced_design.png'; // New design image
 
 const Services = () => {
     const { t } = useLanguage();
@@ -34,15 +36,7 @@ const Services = () => {
             icon: <Ruler size={32} />,
             content: {
                 ...t.services.intermediate,
-                image: aboutImage, // Placeholder
-                detailedDesc: "Ready for a change? Our Intermediate Service focuses on aesthetic updates and functional improvements that refresh your space without major structural work.",
-                features: [
-                    "Flooring installation (laminate, vinyl, tile)",
-                    "Cabinet refacing and hardware updates",
-                    "Full room painting and wallpaper installation",
-                    "Backsplash installation",
-                    "Custom shelving solutions"
-                ]
+                image: serviceIntermediateImage
             }
         },
         {
@@ -50,35 +44,25 @@ const Services = () => {
             icon: <Building2 size={32} />,
             content: {
                 ...t.services.advanced,
-                image: aboutImage, // Placeholder
-                detailedDesc: "Transform your vision into reality. Our Advanced Service covers comprehensive remodeling projects involving structural changes, plumbing, and electrical work.",
-                features: [
-                    "Complete kitchen and bathroom remodels",
-                    "Structural wall removal and open concept layout",
-                    "Basement finishing and waterproofing",
-                    "Electrical and plumbing system upgrades",
-                    "Project management from design to completion"
-                ]
+                image: serviceAdvancedImage
             }
         }
     ];
 
     const handleServiceClick = (service) => {
-        // Only open modal for 'basic' for now as requested, or generally for all. 
-        // User asked: "기본서비스에만 붙여줘" (Attach only to Basic Service).
-        if (service.id === 'basic') {
+        // Allow all modals
+        if (service.id === 'basic' || service.id === 'intermediate' || service.id === 'advanced') {
             setSelectedService(service.content);
-        } else {
-            // For now do nothing or standard behavior?
-            // "기본서비스에만 붙여줘" implies others might not need it yet.
-            // But to show it works, I'll allow clicking on Basic.
         }
     };
 
     return (
         <section id="services" className="py-24 bg-white">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl mb-16 text-center">{t.services.title}</h2>
+                <h2 className="text-3xl md:text-4xl mb-6 text-center">{t.services.title}</h2>
+                <p className="text-gray-600 text-center mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
+                    {t.services.intro}
+                </p>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {serviceData.map((item) => (
@@ -92,7 +76,7 @@ const Services = () => {
                             </p>
                             <button
                                 onClick={() => handleServiceClick(item)}
-                                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#1A1A1A] text-[#1A1A1A] text-xs font-bold uppercase tracking-widest hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] hover:text-white transition-all duration-300 ${item.id === 'basic' ? 'cursor-pointer' : 'cursor-default opacity-30 hover:bg-transparent hover:text-[#1A1A1A] hover:border-[#1A1A1A]'}`}
+                                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#1A1A1A] text-[#1A1A1A] text-xs font-bold uppercase tracking-widest hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] hover:text-white transition-all duration-300 cursor-pointer`}
                             >
                                 {t.services.btn} <ArrowRight size={14} />
                             </button>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2 } from 'lucide-react';
 
 const ServiceModal = ({ isOpen, onClose, service }) => {
+    const { t } = useLanguage();
     if (!isOpen || !service) return null;
 
     return (
@@ -63,7 +65,7 @@ const ServiceModal = ({ isOpen, onClose, service }) => {
                             {/* Action To Close or Contact */}
                             <div className="flex gap-4">
                                 <a href="#contact" onClick={onClose} className="flex-1 bg-[#1A1A1A] text-white text-center py-3 rounded-full font-medium hover:bg-[var(--color-secondary)] transition-colors">
-                                    Inquire Now
+                                    {t.hero.cta}
                                 </a>
                             </div>
                         </div>
