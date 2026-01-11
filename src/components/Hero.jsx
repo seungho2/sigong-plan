@@ -8,14 +8,14 @@ const Hero = () => {
 
     return (
         <section id="hero" className="relative h-screen min-h-[700px] flex items-center bg-[#F5F0EB]">
-            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-20">
+            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-32 md:pt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="z-10"
                 >
-                    <h1 className="text-4xl md:text-6xl mb-6 leading-tight text-[#1A1A1A]">
+                    <h1 className="text-3xl md:text-6xl mb-6 leading-tight text-[#1A1A1A]">
                         {t.hero.title}
                     </h1>
 
