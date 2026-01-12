@@ -12,10 +12,12 @@ const Footer = () => {
             <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm mb-8">
                 {/* Column 1: Brand */}
                 <div className="flex flex-col items-start">
-                    <h2 className="text-xl font-brand font-bold uppercase tracking-[-0.08em] leading-none">SI-GONG PLAN</h2>
+                    <h2 className="text-xl font-brand font-bold uppercase tracking-[-0.08em] leading-none">
+                        <span className="text-[#606c70]">SI-GONG</span> <span className="text-[#000000]">PLAN</span>
+                    </h2>
                     <div className="flex items-center gap-2 mt-1">
-                        <span className="font-brand text-gray-500 font-bold text-xs uppercase tracking-[-0.05em] italic">Rénovation</span>
-                        <div className="h-[1px] w-12 bg-gray-400"></div>
+                        <span className="font-brand font-bold text-xs uppercase tracking-[-0.05em] italic text-[#000000]">Rénovation</span>
+                        <div className="h-[1px] w-12 bg-[#000000]"></div>
                     </div>
                     {/* License Info */}
                     <div className="mt-6 block w-full max-w-[280px] border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
@@ -53,16 +55,8 @@ const Footer = () => {
 
                 {/* Column 2: Location */}
                 <div>
-                    <h3 className="text-base font-bold mb-3">{t.footer.location}</h3>
-                    <p className="text-[#1A1A1A] leading-relaxed flex items-center gap-2">
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[var(--color-secondary)] transition-colors"
-                        >
-                            {t.footer.address}
-                        </a>
+                    <div className="flex items-center gap-2 mb-3">
+                        <h3 className="text-base font-bold">{t.footer.location}</h3>
                         <a
                             href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
                             target="_blank"
@@ -71,6 +65,16 @@ const Footer = () => {
                             aria-label="View on Google Maps"
                         >
                             <MapPin size={18} />
+                        </a>
+                    </div>
+                    <p className="text-[#1A1A1A] leading-relaxed">
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[var(--color-secondary)] transition-colors"
+                        >
+                            {t.footer.address}
                         </a>
                     </p>
                 </div>
