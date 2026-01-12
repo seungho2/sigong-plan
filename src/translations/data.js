@@ -4,6 +4,7 @@ export const translations = {
       home: "Home",
       services: "Services",
       about: "About",
+      gallery: "Gallery",
       contact: "Contact"
     },
     hero: {
@@ -11,7 +12,13 @@ export const translations = {
       subtitle: "Turn your outdated kitchen, uncomfortable bathroom, and worn flooring into the space you've always wanted. Our precise craftsmanship and aesthetic sensibility will create a true sanctuary in your home.",
       cta: "Get Consultation"
     },
+    gallery: {
+      title: "Gallery",
+      subtitle: "OUR RECENT WORK",
+      viewProject: "View Project"
+    },
     services: {
+      subtitle: "OUR EXPERTISE",
       title: "Our Services",
       intro: "From residential to commercial spaces, small repairs to large-scale projects, experience our expert comprehensive services delivered with precision and care.",
       basic: {
@@ -89,6 +96,7 @@ export const translations = {
       home: "홈",
       services: "서비스",
       about: "소개",
+      gallery: "갤러리",
       contact: "문의하기"
     },
     hero: {
@@ -96,7 +104,13 @@ export const translations = {
       subtitle: "낡은 주방, 불편한 욕실, 닳은 바닥재를 당신이 원하는 공간으로 변화시킵니다. 정밀한 기술과 미적 감각으로 당신의 집을 진정한 쉼터로 만들어드립니다.",
       cta: "상담받기"
     },
+    gallery: {
+      title: "갤러리",
+      subtitle: "최근 프로젝트",
+      viewProject: "프로젝트 보기"
+    },
     services: {
+      subtitle: "전문 분야",
       title: "제공 서비스",
       intro: "주거공간에서 상업공간까지, 소규모 수리부터 대규모 프로젝트까지 전문가의 손길로 완성하는 세심한 토털 서비스를 제공합니다.",
       basic: {
@@ -174,6 +188,7 @@ export const translations = {
       home: "Accueil",
       services: "Services",
       about: "À propos",
+      gallery: "Galerie",
       contact: "Contact"
     },
     hero: {
@@ -181,7 +196,13 @@ export const translations = {
       subtitle: "Transformez votre cuisine vieillotte, votre salle de bain inconfortable et vos planchers usés en l'espace que vous avez toujours voulu. Notre savoir-faire précis et notre sensibilité esthétique transformeront votre maison en un véritable refuge.",
       cta: "Obtenir une consultation"
     },
+    gallery: {
+      title: "Galerie",
+      subtitle: "NOS RÉALISATIONS",
+      viewProject: "Voir le projet"
+    },
     services: {
+      subtitle: "NOS COMPÉTENCES",
       title: "Nos Services",
       intro: "Des espaces résidentiels aux commerciaux, des petites réparations aux projets d'envergure, découvrez nos services complets d'experts réalisés avec précision et soin.",
       basic: {

@@ -59,24 +59,35 @@ const Services = () => {
     return (
         <section id="services" className="py-24 bg-white">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl mb-6 text-center">{t.services.title}</h2>
-                <p className="text-gray-600 text-center mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
-                    {t.services.intro}
-                </p>
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <span className="text-[var(--color-secondary)] font-bold tracking-widest text-sm uppercase block mb-4">
+                        {t.services.subtitle}
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-8 text-gray-900 leading-tight">
+                        {t.services.title}
+                    </h2>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                        {t.services.intro}
+                    </p>
+                    <div className="w-20 h-1 bg-black mx-auto"></div>
+                </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {serviceData.map((item) => (
-                        <div key={item.id} className="group p-8 border border-gray-100 hover:border-[var(--color-secondary)] transition-all duration-300 hover:shadow-lg bg-[#FAFAFA] hover:bg-white rounded-sm">
-                            <div className="mb-6 text-[var(--color-text)] group-hover:text-[var(--color-secondary)] transition-colors">
+                    {serviceData.map((item, index) => (
+                        <div key={item.id} className="group relative p-8 border border-gray-200 hover:border-[var(--color-secondary)] transition-all duration-300 bg-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl">
+                            <div className="absolute top-0 right-0 p-4 opacity-10 font-bold text-6xl text-gray-400 group-hover:text-[var(--color-secondary)] transition-colors select-none">
+                                0{index + 1}
+                            </div>
+                            <div className="mb-6 text-[var(--color-text)] group-hover:text-[var(--color-secondary)] transition-colors relative z-10">
                                 {item.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4">{item.content.title}</h3>
-                            <p className="text-gray-600 mb-6 leading-relaxed min-h-[80px]">
+                            <h3 className="text-xl font-bold mb-4 relative z-10">{item.content.title}</h3>
+                            <p className="text-gray-600 mb-8 leading-relaxed min-h-[80px] relative z-10">
                                 {item.content.desc}
                             </p>
                             <button
                                 onClick={() => handleServiceClick(item)}
-                                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#1A1A1A] text-[#1A1A1A] text-xs font-bold uppercase tracking-widest hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] hover:text-white transition-all duration-300 cursor-pointer`}
+                                className={`relative z-10 inline-flex items-center gap-2 px-6 py-3 border border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] hover:text-white transition-all duration-300 cursor-pointer`}
                             >
                                 {t.services.btn} <ArrowRight size={14} />
                             </button>

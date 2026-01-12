@@ -1,0 +1,24 @@
+<svg width="64" height="64" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        path, line, rect { stroke: #2D2D2D; fill: none; }
+        path[fill="currentColor"] { fill: #2D2D2D; stroke: none; }
+        
+        @media (prefers-color-scheme: dark) {
+            path, line, rect { stroke: #FFFFFF !important; }
+            path[fill="currentColor"] { fill: #FFFFFF !important; stroke: none; }
+        }
+    </style>
+    <g>
+        <!-- House Shape -->
+        <path d="M5 25 L30 5 L55 25 V55 H5 V25 Z" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="15" y1="25" x2="15" y2="55" stroke-width="4" />
+        <line x1="5" y1="25" x2="55" y2="25" stroke-width="4" />
+        
+        <!-- Window -->
+        <rect x="22" y="32" width="10" height="10" stroke-width="4"/>
+
+        <!-- Hammer Icon -->
+        <path d="M48 45 L58 35 L62 39 L52 49 Z" fill="currentColor" stroke="none" /> 
+        <path d="M55 38 L65 28 C67 26 70 26 72 28 C74 30 74 33 72 35 L62 45" stroke-width="6" stroke-linecap="round" />
+    </g>
+</svg>

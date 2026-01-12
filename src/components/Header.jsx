@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
-import logo from '../assets/logo_v7.png';
+import Logo from './Logo';
 
 const Header = () => {
     const { t, switchLanguage, language } = useLanguage();
@@ -14,7 +14,7 @@ const Header = () => {
             setIsScrolled(window.scrollY > 50);
 
             // Scroll Spy Logic
-            const sections = ['hero', 'services', 'about', 'contact'];
+            const sections = ['hero', 'about', 'services', 'gallery', 'contact'];
             let current = '';
 
             for (const section of sections) {
@@ -41,17 +41,18 @@ const Header = () => {
         <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto pl-6 pr-10 flex items-center">
                 {/* Logo */}
-                <div className="flex items-center gap-3 mr-12">
+                <div className="flex items-center mr-12">
                     <a href="#hero" className="block cursor-pointer">
-                        <img src={logo} alt="Si-Gong Plan Logo" className="h-16 w-auto object-contain" />
+                        <Logo />
                     </a>
                 </div>
 
                 {/* Desktop Nav - Right Aligned */}
                 <nav className="hidden md:flex items-center gap-8 ml-auto mr-8">
                     <a href="#hero" className={navLinkClass('hero')}>{t.nav.home}</a>
-                    <a href="#services" className={navLinkClass('services')}>{t.nav.services}</a>
                     <a href="#about" className={navLinkClass('about')}>{t.nav.about}</a>
+                    <a href="#services" className={navLinkClass('services')}>{t.nav.services}</a>
+                    <a href="#gallery" className={navLinkClass('gallery')}>{t.nav.gallery}</a>
                     <a href="#contact" className={navLinkClass('contact')}>{t.nav.contact}</a>
                 </nav>
 
@@ -81,8 +82,9 @@ const Header = () => {
             {isMobileMenuOpen && (
                 <div className="absolute top-full left-0 w-full bg-white shadow-lg p-6 flex flex-col gap-4 md:hidden">
                     <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.home}</a>
-                    <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.services}</a>
                     <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.about}</a>
+                    <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.services}</a>
+                    <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.gallery}</a>
                     <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t.nav.contact}</a>
 
                 </div>

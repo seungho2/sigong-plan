@@ -12,32 +12,39 @@ const Footer = () => {
             <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm mb-8">
                 {/* Column 1: Brand */}
                 <div className="flex flex-col items-start">
-                    <h2 className="text-xl font-brand font-bold uppercase tracking-wide leading-none">SI-GONG PLAN</h2>
-                    <div className="flex items-center gap-2">
-                        <span className="italic font-brand text-gray-500 font-medium">Rénovation</span>
-                        <div className="h-[2px] w-16 bg-gray-400"></div>
+                    <h2 className="text-xl font-brand font-bold uppercase tracking-[-0.08em] leading-none">SI-GONG PLAN</h2>
+                    <div className="flex items-center gap-2 mt-1">
+                        <span className="font-brand text-gray-500 font-bold text-xs uppercase tracking-[-0.05em] italic">Rénovation</span>
+                        <div className="h-[1px] w-12 bg-gray-400"></div>
                     </div>
                     {/* License Info */}
-                    {/* License Info */}
-                    <div className="mt-4 block w-3/5 border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
-                        <ul className="flex flex-col gap-1 text-gray-800 text-xs font-medium">
-                            <li className="flex items-center">
-                                <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-3 shrink-0"></span>
-                                <span className="w-20 shrink-0 font-bold text-gray-900">R.B.Q</span>
+                    <div className="mt-6 block w-full max-w-[280px] border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
+                        <ul className="flex flex-col gap-2 text-gray-800 text-xs font-medium">
+                            <li className="flex items-center justify-start gap-4">
+                                <div className="flex items-center">
+                                    <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
+                                    <span className="font-bold text-gray-900 w-16">R.B.Q</span>
+                                </div>
                                 <span className="font-mono tracking-wide">5811-9603-01</span>
                             </li>
-                            <li className="flex items-center">
-                                <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-3 shrink-0"></span>
-                                <span className="w-20 shrink-0 font-bold text-gray-900">C.C.Q</span>
+                            <li className="flex items-center justify-start gap-4">
+                                <div className="flex items-center">
+                                    <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
+                                    <span className="font-bold text-gray-900 w-16">C.C.Q</span>
+                                </div>
                                 <span className="font-mono tracking-wide">909-980</span>
                             </li>
-                            <li className="flex items-center">
-                                <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-3 shrink-0"></span>
-                                <span className="font-bold text-gray-900">Q.C.C.A</span>
+                            <li className="flex items-center justify-start gap-4">
+                                <div className="flex items-center">
+                                    <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
+                                    <span className="font-bold text-gray-900">Q.C.C.A</span>
+                                </div>
                             </li>
-                            <li className="flex items-center">
-                                <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-3 shrink-0"></span>
-                                <span className="w-20 shrink-0 font-bold text-gray-900">APCHQ</span>
+                            <li className="flex items-center justify-start gap-4">
+                                <div className="flex items-center">
+                                    <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
+                                    <span className="font-bold text-gray-900 w-16">APCHQ</span>
+                                </div>
                                 <span className="font-mono tracking-wide">917984-04</span>
                             </li>
                         </ul>
@@ -75,7 +82,7 @@ const Footer = () => {
 
             {/* Bottom Line - Copyright & Social */}
             <div className="container mx-auto px-6 pt-6 border-t border-gray-300 text-xs text-gray-600 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>{t.footer.copyright}</p>
+                <p className="uppercase">{t.footer.copyright}</p>
 
                 {/* Social Moved Logic */}
                 <div className="flex items-center gap-4">

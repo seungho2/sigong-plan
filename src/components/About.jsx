@@ -9,7 +9,17 @@ const About = () => {
         <section id="about" className="py-24 bg-[#F9F9F9]">
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div className="relative order-2 md:order-1">
-                    <img src={aboutImage} alt="Wood Detail" className="w-full h-[500px] object-cover rounded-xl shadow-[15px_15px_30px_rgba(0,0,0,0.25)]" />
+                    <div
+                        className="w-full h-[500px] rounded-xl shadow-[15px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                        style={{
+                            maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent), linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
+                            WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent), linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
+                            maskComposite: 'intersect',
+                            WebkitMaskComposite: 'source-in'
+                        }}
+                    >
+                        <img src={aboutImage} alt="Wood Detail" className="w-full h-full object-cover" />
+                    </div>
                     <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[var(--color-secondary)] -z-10 hidden md:block"></div>
                 </div>
 
