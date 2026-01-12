@@ -57,7 +57,7 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-24 bg-[#F5F5F5]">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-[var(--color-secondary)] font-bold tracking-widest text-sm uppercase block mb-4">

@@ -22,9 +22,12 @@ const Hero = () => {
                     <p className="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
                         {t.hero.subtitle}
                     </p>
-                    <button className="bg-[#1A1A1A] text-white px-8 py-3 rounded-full hover:bg-[var(--color-secondary)] transition-colors duration-300">
+                    <a
+                        href="#contact"
+                        className="inline-block bg-[#1A1A1A] text-white px-8 py-3 rounded-full hover:bg-[var(--color-secondary)] transition-colors duration-300"
+                    >
                         {t.hero.cta}
-                    </button>
+                    </a>
                 </motion.div>
 
                 <motion.div

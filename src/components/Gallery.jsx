@@ -107,17 +107,17 @@ const Gallery = () => {
                     {/* Navigation Buttons (All Devices) */}
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-48 w-4 md:w-12 bg-white/10 hover:bg-white/20 rounded-r-2xl shadow-sm backdrop-blur-[2px] flex items-center justify-center transition-all active:scale-95 text-white border-r border-white/10 group-nav"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-48 w-8 md:w-12 bg-white/10 hover:bg-white/20 rounded-r-2xl shadow-sm backdrop-blur-[2px] flex items-center justify-center transition-all active:scale-95 text-white border-r border-white/10 group-nav"
                         aria-label="Scroll left"
                     >
-                        <ChevronLeft size={isMobile ? 20 : 40} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] opacity-80 group-nav-hover:opacity-100" />
+                        <ChevronLeft size={isMobile ? 28 : 40} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] opacity-80 group-nav-hover:opacity-100" />
                     </button>
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-48 w-4 md:w-12 bg-white/10 hover:bg-white/20 rounded-l-2xl shadow-sm backdrop-blur-[2px] flex items-center justify-center transition-all active:scale-95 text-white border-l border-white/10 group-nav"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-48 w-8 md:w-12 bg-white/10 hover:bg-white/20 rounded-l-2xl shadow-sm backdrop-blur-[2px] flex items-center justify-center transition-all active:scale-95 text-white border-l border-white/10 group-nav"
                         aria-label="Scroll right"
                     >
-                        <ChevronRight size={isMobile ? 20 : 40} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] opacity-80 group-nav-hover:opacity-100" />
+                        <ChevronRight size={isMobile ? 28 : 40} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] opacity-80 group-nav-hover:opacity-100" />
                     </button>
 
                     {/* Scroll Container */}
