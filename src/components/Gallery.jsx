@@ -48,7 +48,29 @@ const Gallery = () => {
                 }
             }, 100);
         }
-    }, [galleryImages]);
+    }, []); // Run once on mount (galleryImages is static constant)
+
+    // Keyboard Navigation for Lightbox
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!selectedImage) return;
+
+            if (e.key === 'Escape') setSelectedImage(null);
+            if (e.key === 'ArrowLeft') {
+                const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                setSelectedImage(galleryImages[prevIndex]);
+            }
+            if (e.key === 'ArrowRight') {
+                const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                const nextIndex = (currentIndex + 1) % galleryImages.length;
+                setSelectedImage(galleryImages[nextIndex]);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedImage]);
 
     // Infinite Scroll Handler
     const handleScroll = () => {
@@ -178,12 +200,39 @@ const Gallery = () => {
                         onClick={() => setSelectedImage(null)}
                     >
                         <button
-                            className="absolute top-6 right-6 text-white hover:text-[var(--color-secondary)] transition-colors"
+                            className="absolute top-6 right-6 text-white hover:text-[var(--color-secondary)] transition-colors z-50"
                             onClick={() => setSelectedImage(null)}
                         >
                             <X size={32} />
                         </button>
+
+                        {/* Navigation Buttons for Lightbox */}
+                        <button
+                            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white/50 hover:text-white transition-colors z-50"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                                const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                                setSelectedImage(galleryImages[prevIndex]);
+                            }}
+                        >
+                            <ChevronLeft size={48} />
+                        </button>
+
+                        <button
+                            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white/50 hover:text-white transition-colors z-50"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                                const nextIndex = (currentIndex + 1) % galleryImages.length;
+                                setSelectedImage(galleryImages[nextIndex]);
+                            }}
+                        >
+                            <ChevronRight size={48} />
+                        </button>
+
                         <motion.img
+                            key={selectedImage.id}
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
@@ -191,6 +240,7 @@ const Gallery = () => {
                             alt={selectedImage.category}
                             className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
+                            style={{ filter: 'contrast(1.05) saturate(0.85) sepia(0.05) brightness(1.02)' }}
                         />
                     </motion.div>
                 )}
