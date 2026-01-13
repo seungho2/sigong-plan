@@ -4,7 +4,12 @@ import { translations } from '../translations/data';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('ko'); // Default to Korean
+    const [language, setLanguage] = useState(() => {
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.startsWith('ko')) return 'ko';
+        if (browserLang.startsWith('fr')) return 'fr';
+        return 'en'; // Default fallback
+    });
 
     const t = translations[language];
 

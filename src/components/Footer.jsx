@@ -11,13 +11,13 @@ const Footer = () => {
             {/* Main Grid - Now 3 Columns */}
             <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm mb-8">
                 {/* Column 1: Brand */}
-                <div className="flex flex-col items-start">
-                    <h2 className="text-xl font-brand font-bold uppercase tracking-[-0.08em] leading-none">
+                <div className="flex flex-col items-start w-fit">
+                    <h2 className="text-2xl font-brand font-bold uppercase tracking-[-0.08em] leading-none">
                         <span className="text-[#606c70]">SI-GONG</span> <span className="text-[#000000]">PLAN</span>
                     </h2>
-                    <div className="flex items-center gap-2 mt-1">
-                        <span className="font-brand font-bold text-xs uppercase tracking-[-0.05em] italic text-[#000000]">Rénovation</span>
-                        <div className="h-[1px] w-12 bg-[#000000]"></div>
+                    <div className="flex items-center gap-2 mt-0 w-full">
+                        <span className="font-brand font-bold text-xs tracking-[-0.05em] italic text-[#000000] shrink-0">Rénovation | Montréal</span>
+                        <div className="h-[1px] bg-[#000000] flex-grow"></div>
                     </div>
                     {/* License Info - Mobile Only */}
                     <div className="md:hidden mt-6 block w-full max-w-[280px] border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
