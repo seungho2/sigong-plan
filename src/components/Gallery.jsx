@@ -3,27 +3,18 @@ import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import imgKitchen from '../assets/gallery_kitchen_1768241243685.png';
-import imgBathroom from '../assets/gallery_bathroom_1768241258981.png';
-import imgLiving from '../assets/gallery_living_1768241273472.png';
-import imgBedroom from '../assets/gallery_bedroom_1768241287336.png';
-import imgOffice from '../assets/gallery_office_1768241308447.png';
-import imgDining from '../assets/gallery_dining_1768241320701.png';
-import imgHallway from '../assets/gallery_hallway_1768241333727.png';
-import imgStairs from '../assets/gallery_stairs_1768241347189.png';
-import imgLaundry from '../assets/gallery_laundry.png';
-
-const galleryImages = [
-    { id: 1, src: imgKitchen, category: 'Kitchen', aspect: 'aspect-[3/4]' },
-    { id: 2, src: imgStairs, category: 'Interior', aspect: 'aspect-[4/3]' },
-    { id: 3, src: imgLiving, category: 'Living Room', aspect: 'aspect-square' },
-    { id: 4, src: imgBathroom, category: 'Bathroom', aspect: 'aspect-[3/4]' },
-    { id: 5, src: imgDining, category: 'Dining', aspect: 'aspect-[4/3]' },
-    { id: 6, src: imgBedroom, category: 'Bedroom', aspect: 'aspect-square' },
-    { id: 7, src: imgOffice, category: 'Office', aspect: 'aspect-[3/4]' },
-    { id: 8, src: imgHallway, category: 'Entrance', aspect: 'aspect-[4/3]' },
-    { id: 9, src: imgLaundry, category: 'Laundry Room', aspect: 'aspect-square' },
-];
+// Dynamic Import Logic
+const imagesGlob = import.meta.glob('../assets/gallery/*.{png,jpg,jpeg,webp}', { eager: true });
+const galleryImages = Object.entries(imagesGlob).map(([path, module], index) => {
+    // Generate simple aspects pattern for visual variety: 3/4, 4/3, square
+    const aspects = ['aspect-[3/4]', 'aspect-[4/3]', 'aspect-square'];
+    return {
+        id: index + 1,
+        src: module.default,
+        category: 'Interior', // Unified Category
+        aspect: aspects[index % 3]
+    };
+}).sort(() => Math.random() - 0.5);
 
 const Gallery = () => {
     const { t } = useLanguage();
@@ -145,6 +136,7 @@ const Gallery = () => {
                                         src={image.src}
                                         alt={image.category}
                                         className="w-full h-full object-cover"
+                                        style={{ filter: 'contrast(1.05) saturate(0.85) sepia(0.05) brightness(1.02)' }}
                                         // Breathing Animation: Universal
                                         animate={{ scale: [1, 1.15] }}
                                         transition={{
