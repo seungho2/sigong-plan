@@ -19,27 +19,27 @@ const Footer = () => {
                         <span className="font-brand font-bold text-xs uppercase tracking-[-0.05em] italic text-[#000000]">Rénovation</span>
                         <div className="h-[1px] w-12 bg-[#000000]"></div>
                     </div>
-                    {/* License Info */}
-                    <div className="mt-6 block w-full max-w-[280px] border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
+                    {/* License Info - Mobile Only */}
+                    <div className="md:hidden mt-6 block w-full max-w-[280px] border border-gray-400 rounded-lg p-4 shadow-sm hover:border-[var(--color-secondary)] transition-colors duration-300">
                         <ul className="flex flex-col gap-2 text-gray-800 text-xs font-medium">
                             <li className="flex items-center justify-start gap-4">
                                 <div className="flex items-center">
                                     <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
-                                    <span className="font-bold text-gray-900 w-16">R.B.Q</span>
+                                    <span className="font-bold text-gray-900 w-16">RBQ</span>
                                 </div>
                                 <span className="font-mono tracking-wide">5811-9603-01</span>
                             </li>
                             <li className="flex items-center justify-start gap-4">
                                 <div className="flex items-center">
                                     <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
-                                    <span className="font-bold text-gray-900 w-16">C.C.Q</span>
+                                    <span className="font-bold text-gray-900 w-16">CCQ</span>
                                 </div>
                                 <span className="font-mono tracking-wide">909-980</span>
                             </li>
                             <li className="flex items-center justify-start gap-4">
                                 <div className="flex items-center">
                                     <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mr-2 shrink-0"></span>
-                                    <span className="font-bold text-gray-900">Q.C.C.A</span>
+                                    <span className="font-bold text-gray-900">QCCQ</span>
                                 </div>
                             </li>
                             <li className="flex items-center justify-start gap-4">

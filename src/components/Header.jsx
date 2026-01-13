@@ -35,10 +35,30 @@ const Header = () => {
     }, []);
 
     const navLinkClass = (section) =>
-        `text-base font-medium transition-colors ${activeSection === section ? 'text-[var(--color-secondary)] font-bold' : 'text-gray-700 hover:text-[var(--color-secondary)]'}`;
+        `text-xl font-medium transition-colors ${activeSection === section ? 'text-[var(--color-secondary)] font-bold' : 'text-gray-700 hover:text-[var(--color-secondary)]'}`;
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}>
+            {/* Desktop License Info Row - Reordered to Top */}
+            <div className="hidden md:flex container mx-auto justify-end px-10 gap-3 text-xs text-gray-800 mb-2">
+                <span className="flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-1.5"></span>
+                    <span className="font-bold">RBQ <span className="font-normal font-mono ml-1">5811-9603-01</span></span>
+                </span>
+                <span className="flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-1.5"></span>
+                    <span className="font-bold">CCQ <span className="font-normal font-mono ml-1">909-980</span></span>
+                </span>
+                <span className="flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-1.5"></span>
+                    <span className="font-bold">QCCQ</span>
+                </span>
+                <span className="flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-1.5"></span>
+                    <span className="font-bold">APCHQ <span className="font-normal font-mono ml-1">917984-04</span></span>
+                </span>
+            </div>
+
             <div className="container mx-auto pl-6 pr-10 flex items-center">
                 {/* Logo */}
                 <div className="flex items-center mr-12">
@@ -77,6 +97,13 @@ const Header = () => {
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
+
+            {/* Desktop License Info Row - visible below main header logic if needed, or integrated. 
+                User said "under the header menu". The menu is to the right. 
+                I will put it in a separate row within the container if space allows? 
+                Actually, putting it absolute positioned or in a separate flex row.
+            */}
+
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
