@@ -5,7 +5,7 @@ import App from './App.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 
 if (import.meta.env.DEV) {
-  document.title = "SI-GONG PLAN (localhost)";
+  document.title = `(localhost) ${document.title}`;
 }
 
 createRoot(document.getElementById('root')).render(
