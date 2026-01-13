@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Mail, Facebook, MapPin, Phone } from 'lucide-react';
+import { Instagram, Mail, Facebook, MapPin, Phone, Twitter } from 'lucide-react';
 
 
 const Footer = () => {
@@ -112,6 +112,12 @@ const Footer = () => {
                         </a>
                         <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors" aria-label="Pinterest">
                             <div className="w-[18px] h-[18px] rounded-full border-2 border-current flex items-center justify-center text-[10px] font-bold">P</div>
+                        </a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors" aria-label="X (Twitter)">
+                            {/* X Logo */}
+                            <svg viewBox="0 0 24 24" aria-hidden="true" className="w-[18px] h-[18px] fill-current">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
                         </a>
 
                     </div>
