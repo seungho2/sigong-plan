@@ -67,7 +67,7 @@ const Header = () => {
                     >
                         <option value="fr">FR</option>
                         <option value="en">EN</option>
-                        <option value="kr">KR</option>
+                        <option value="ko">KR</option>
                     </select>
                 </div>
 

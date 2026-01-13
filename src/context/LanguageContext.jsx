@@ -4,7 +4,7 @@ import { translations } from '../translations/data';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('fr'); // Default to French
+    const [language, setLanguage] = useState('ko'); // Default to Korean
 
     const t = translations[language];
 

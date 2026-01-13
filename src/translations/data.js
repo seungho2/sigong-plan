@@ -91,7 +91,7 @@ export const translations = {
       email: "sigongplan123@gmail.com"
     }
   },
-  kr: {
+  ko: {
     nav: {
       home: "홈",
       services: "서비스",
