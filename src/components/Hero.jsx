@@ -15,13 +15,27 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="z-10 order-2 md:order-1"
                 >
-                    <h1 className={`text-4xl md:text-6xl mb-8 leading-tight text-[#1A1A1A] ${(t.hero.title.charCodeAt(0) < 128) ? 'hero-title-styled' : ''}`}>
+                    <h1 className={`text-3xl md:text-5xl mb-8 leading-tight text-[#1A1A1A] ${(t.hero.title.charCodeAt(0) < 128) ? 'hero-title-styled' : ''}`}>
                         {t.hero.title}
                     </h1>
 
-                    <p className="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
+                    <p className="text-xl text-gray-600 mb-4 max-w-md leading-snug">
                         {t.hero.subtitle}
                     </p>
+
+                    {/* Description Points (Conditionally Rendered) */}
+                    {t.hero.points && (
+                        <ul className="space-y-1 mb-10 text-gray-700 ml-6">
+                            {t.hero.points.map((point, index) => (
+                                <li key={index} className="flex items-start gap-3 text-base">
+                                    <span className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full mt-2.5 flex-shrink-0" />
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+
                     <a
                         href="#contact"
                         className="inline-block bg-[#1A1A1A] text-white px-8 py-3 rounded-full hover:bg-[var(--color-secondary)] transition-colors duration-300"

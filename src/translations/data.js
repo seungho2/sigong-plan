@@ -8,8 +8,13 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Your space perfected by expert hands",
-      subtitle: "Turn your outdated kitchen, uncomfortable bathroom, and worn flooring into the space you've always wanted. Our precise craftsmanship and aesthetic sensibility will create a true sanctuary in your home.",
+      title: "Building your new space with expert hands.",
+      subtitle: "Customer satisfaction is our greatest asset. We deliver top-tier results with passion and expertise.",
+      points: [
+        "Residential / Commercial / Industrial & Other Spaces",
+        "From minor maintenance to major renovations",
+        "Reasonable Costs / On-Schedule Delivery / Prompt Response"
+      ],
       cta: "Get Consultation"
     },
     gallery: {
@@ -61,9 +66,9 @@ export const translations = {
       modalBtn: "Inquire Now"
     },
     about: {
-      title: "About Our Company",
-      desc: "Based in Montreal, SI-GONG PLAN specializes in high-quality interior construction and renovation. We bring your vision to life with precision and care.",
-      btn: "Read More"
+      title: "About Us",
+      desc: `SI-GONG PLAN is a Montreal-based renovation partner specializing in elevating the value of residential, commercial, and industrial spaces.\n\nWe go beyond simple repairs to breathe new life into the spaces where your life and business unfold. Driven by our philosophy that 'Customer satisfaction is our greatest asset,' we pour our expertise and dedication into every step of the process.\n\nSI-GONG PLAN promises: transparent and reasonable estimates, strict schedule adherence, and prompt, seamless communication to reward your trust with perfect results. Make your ideal space a reality with SI-GONG PLAN, Montreal's space experts.`,
+      btn: "Learn More"
     },
     contact: {
       title: "Contact Us",
@@ -100,8 +105,13 @@ export const translations = {
       contact: "문의하기"
     },
     hero: {
-      title: "전문가의 손으로 당신의 공간을 완성합니다",
-      subtitle: "낡은 주방, 불편한 욕실, 닳은 바닥재를 당신이 원하는 공간으로 변화시킵니다. 정밀한 기술과 미적 감각으로 당신의 집을 진정한 쉼터로 만들어드립니다.",
+      title: "전문가의 손길로 새로운 공간을 완성합니다.",
+      subtitle: "고객의 만족이 우리의 최고 자산 입니다. 전문성과 열정을 바탕으로 최상의 결과를 만들어 드립니다.",
+      points: [
+        "주거공간 / 상업공간 / 산업 및 기타 공간",
+        "소규모 유지보수부터 대규모 레노베이션까지",
+        "합리적 비용 / 일정 준수 / 신속한 대응"
+      ],
       cta: "상담받기"
     },
     gallery: {
@@ -154,7 +164,7 @@ export const translations = {
     },
     about: {
       title: "회사 소개",
-      desc: "몬트리올에 위치한 시공플랜은 고품질 인테리어 시공 및 리노베이션 전문 기업입니다. 고객님의 비전을 정밀하고 세심하게 실현해 드립니다.",
+      desc: `시공플랜(SI-GONG PLAN)은 몬트리올을 기반으로 주거, 상업, 산업 공간의 가치를 높이는 전문 리노베이션 파트너입니다.\n\n우리는 단순한 수리를 넘어, 고객의 삶과 비즈니스가 이루어지는 공간에 새로운 숨결을 불어넣습니다. '고객의 만족이 우리의 최고 자산'이라는 철학 아래, 모든 과정에 전문가의 정성과 책임을 다합니다.\n\n시공플랜은 약속합니다. 투명하고 합리적인 견적, 철저한 일정 준수, 그리고 고객님과의 신속하고 원활한 소통으로 소중한 공간을 가장 완벽한 결과물로 보답하겠습니다. 몬트리올의 공간 전문가, 시공플랜과 함께 당신의 이상적인 공간을 현실로 만들어보세요.`,
       btn: "자세히 보기"
     },
     contact: {
@@ -192,8 +202,13 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Votre espace transformé par l'expertise",
-      subtitle: "Transformez votre cuisine vieillotte, votre salle de bain inconfortable et vos planchers usés en l'espace que vous avez toujours voulu. Notre savoir-faire précis et notre sensibilité esthétique transformeront votre maison en un véritable refuge.",
+      title: "Façonner votre nouvel espace avec une main d'expert.",
+      subtitle: "La satisfaction du client est notre plus grand atout. Nous livrons des résultats supérieurs avec passion et expertise.",
+      points: [
+        "Résidentiel / Commercial / Industriel et autres espaces",
+        "Du petit entretien aux rénovations majeures",
+        "Coûts raisonnables / Respect des délais / Réponse rapide"
+      ],
       cta: "Obtenir une consultation"
     },
     gallery: {
@@ -246,7 +261,7 @@ export const translations = {
     },
     about: {
       title: "Notre Société",
-      desc: "Basé à Montréal, SI-GONG PLAN se spécialise dans la construction intérieure et la rénovation de haute qualité. Nous donnons vie à votre vision avec précision et soin.",
+      desc: `Basé à Montréal, SI-GONG PLAN est votre partenaire expert en rénovation, dédié à la valorisation des espaces résidentiels, commerciaux et industriels.\n\nNous allons au-delà des simples réparations pour insuffler une nouvelle vie aux lieux où vous vivez et travaillez. Guidés par notre philosophie selon laquelle « la satisfaction du client est notre plus grand atout », nous nous engageons avec expertise et dévouement à chaque étape du processus.\n\nSI-GONG PLAN s'engage à vous offrir : des devis transparents et raisonnables, le respect rigoureux des échéanciers et une communication fluide et rapide. Nous livrons la perfection pour vos espaces précieux. Réalisez votre espace idéal avec SI-GONG PLAN, les experts de l'espace à Montréal.`,
       btn: "Lire plus"
     },
     contact: {

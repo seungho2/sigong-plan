@@ -26,7 +26,7 @@ const About = () => {
                 <div className="order-1 md:order-2">
                     <span className="block text-[var(--color-secondary)] font-bold tracking-widest text-sm mb-4 uppercase">SI-GONG PLAN</span>
                     <h2 className="text-3xl md:text-5xl mb-8 leading-tight font-bold">{t.about.title}</h2>
-                    <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                    <p className="text-gray-600 mb-8 text-lg leading-relaxed whitespace-pre-line">
                         {t.about.desc}
                     </p>
                     <div className="w-20 h-1 bg-black mb-8"></div>
