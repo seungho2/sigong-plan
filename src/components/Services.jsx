@@ -24,7 +24,7 @@ const Services = () => {
     const serviceData = [
         {
             id: 'basic',
-            icon: <Hammer size={32} />,
+            Icon: Hammer,
             content: {
                 ...t.services.basic,
                 // Image for demo
@@ -33,7 +33,7 @@ const Services = () => {
         },
         {
             id: 'intermediate',
-            icon: <Ruler size={32} />,
+            Icon: Ruler,
             content: {
                 ...t.services.intermediate,
                 image: serviceIntermediateImage
@@ -41,7 +41,7 @@ const Services = () => {
         },
         {
             id: 'advanced',
-            icon: <Building2 size={32} />,
+            Icon: Building2,
             content: {
                 ...t.services.advanced,
                 image: serviceAdvancedImage
@@ -74,12 +74,12 @@ const Services = () => {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {serviceData.map((item, index) => (
-                        <div key={item.id} className="group relative p-8 border border-gray-200 hover:border-[var(--color-secondary)] transition-all duration-300 bg-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 font-bold text-6xl text-gray-400 group-hover:text-[var(--color-secondary)] transition-colors select-none">
-                                0{index + 1}
+                        <div key={item.id} className="group relative p-8 border border-gray-200 hover:border-[var(--color-secondary)] transition-all duration-300 bg-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-2xl overflow-hidden">
+                            <div className="absolute -right-24 -bottom-24 opacity-[0.03] text-gray-900 group-hover:text-[var(--color-secondary)] group-hover:opacity-[0.05] transition-all duration-500 select-none pointer-events-none">
+                                <item.Icon size={400} strokeWidth={1} />
                             </div>
                             <div className="mb-6 text-[var(--color-text)] group-hover:text-[var(--color-secondary)] transition-colors relative z-10">
-                                {item.icon}
+                                <item.Icon size={32} />
                             </div>
                             <h3 className="text-xl font-bold mb-4 relative z-10">{item.content.title}</h3>
                             <p className="text-gray-600 mb-8 leading-relaxed min-h-[80px] relative z-10">

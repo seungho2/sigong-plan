@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Mail, Facebook, MapPin } from 'lucide-react';
+import { Instagram, Mail, Facebook, MapPin, Phone } from 'lucide-react';
 
 
 const Footer = () => {
@@ -82,12 +82,17 @@ const Footer = () => {
                 {/* Column 3: Contact INFO */}
                 <div>
                     <h3 className="text-base font-bold mb-3">{t.footer.contactInfo}</h3>
-                    <p className="text-[#1A1A1A] leading-relaxed">
+                    <p className="text-[#1A1A1A] leading-relaxed flex items-center gap-2 mb-2">
+                        <Phone size={18} />
                         {t.footer.phone}
                     </p>
-                    <p className="text-[#1A1A1A] leading-relaxed">
+                    <a
+                        href={`mailto:${t.footer.email}`}
+                        className="text-[#1A1A1A] leading-relaxed flex items-center gap-2 hover:text-[var(--color-secondary)] transition-colors"
+                    >
+                        <Mail size={18} />
                         {t.footer.email}
-                    </p>
+                    </a>
                 </div>
             </div>
 
@@ -99,18 +104,16 @@ const Footer = () => {
                 <div className="flex items-center gap-4">
                     <span className="uppercase tracking-wide text-[10px]">{t.footer.social}</span>
                     <div className="flex gap-3">
+                        <a href="https://www.instagram.com/sigongplan" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors">
+                            <Instagram size={18} />
+                        </a>
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors">
                             <Facebook size={18} />
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors">
-                            <Instagram size={18} />
                         </a>
                         <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-secondary)] transition-colors" aria-label="Pinterest">
                             <div className="w-[18px] h-[18px] rounded-full border-2 border-current flex items-center justify-center text-[10px] font-bold">P</div>
                         </a>
-                        <a href={`mailto:${t.footer.email}`} className="hover:text-[var(--color-secondary)] transition-colors">
-                            <Mail size={18} />
-                        </a>
+
                     </div>
                 </div>
             </div>
