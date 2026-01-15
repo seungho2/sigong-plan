@@ -2,27 +2,59 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Dynamic Import Logic
-const imagesGlob = import.meta.glob('../assets/gallery/*.{png,jpg,jpeg,webp}', { eager: true });
-const galleryImages = Object.entries(imagesGlob).map(([path, module], index) => {
-    // Generate simple aspects pattern for visual variety: 3/4, 4/3, square
-    const aspects = ['aspect-[3/4]', 'aspect-[4/3]', 'aspect-square'];
-    return {
-        id: index + 1,
-        src: module.default,
-        category: 'Interior', // Unified Category
-        aspect: aspects[index % 3]
-    };
-}).sort(() => Math.random() - 0.5);
+import { db } from '../utils/firebase';
+import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
 
 const Gallery = () => {
     const { t } = useLanguage();
     const [selectedImage, setSelectedImage] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [galleryImages, setGalleryImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     // Scroll Ref
     const scrollRef = useRef(null);
     const scrollInitialized = useRef(false);
+
+    // Fetch Images from Firebase
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                // Optimized Query: Uses Composite Index (Visible + Date) for scalability
+                const q = query(
+                    collection(db, "gallery"),
+                    where("isVisible", "==", true),
+                    orderBy("date", "desc")
+                );
+
+                const querySnapshot = await getDocs(q);
+                console.log(`Gallery: Fetched ${querySnapshot.size} images from Firestore.`);
+
+                const items = [];
+                const aspects = ['aspect-[3/4]', 'aspect-[4/3]', 'aspect-square'];
+
+                querySnapshot.forEach((doc, index) => {
+                    const data = doc.data();
+                    items.push({
+                        id: doc.id,
+                        src: data.url,
+                        category: data.category || 'Interior',
+                        title: data.title || 'Gallery Image',
+                        date: data.date,
+                        aspect: aspects[index % 3]
+                    });
+                });
+
+                setGalleryImages(items);
+            } catch (error) {
+                console.error("Gallery: Error fetching images:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchImages();
+    }, []);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -31,12 +63,15 @@ const Gallery = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Initialize Scroll Position to Middle
+    // Initialize Scroll Position to Middle (Only after images are loaded)
     useEffect(() => {
-        if (scrollRef.current && !scrollInitialized.current) {
+        if (!loading && galleryImages.length > 0 && scrollRef.current && !scrollInitialized.current) {
             // Wait for render
             setTimeout(() => {
+                if (!scrollRef.current) return;
+
                 const { children } = scrollRef.current;
+                // If we have enough items for the triple loop
                 if (children.length >= galleryImages.length * 3 + 1) {
                     const firstItem = children[1];
                     const secondSetFirstItem = children[1 + galleryImages.length];
@@ -46,9 +81,9 @@ const Gallery = () => {
                         scrollInitialized.current = true;
                     }
                 }
-            }, 100);
+            }, 300); // Slightly longer delay to ensure DOM is ready
         }
-    }, []); // Run once on mount (galleryImages is static constant)
+    }, [loading, galleryImages]);
 
     // Keyboard Navigation for Lightbox
     useEffect(() => {
@@ -58,11 +93,13 @@ const Gallery = () => {
             if (e.key === 'Escape') setSelectedImage(null);
             if (e.key === 'ArrowLeft') {
                 const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                if (currentIndex === -1) return;
                 const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
                 setSelectedImage(galleryImages[prevIndex]);
             }
             if (e.key === 'ArrowRight') {
                 const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                if (currentIndex === -1) return;
                 const nextIndex = (currentIndex + 1) % galleryImages.length;
                 setSelectedImage(galleryImages[nextIndex]);
             }
@@ -70,14 +107,13 @@ const Gallery = () => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [selectedImage]);
+    }, [selectedImage, galleryImages]);
 
     // Infinite Scroll Handler
     const handleScroll = () => {
-        if (!scrollRef.current) return;
+        if (!scrollRef.current || galleryImages.length === 0) return;
 
         const { scrollLeft, clientWidth, children } = scrollRef.current;
-        // children[0] is style tag. children[1] is first image. children[1+galleryImages.length] is first image of second set.
         if (children.length < galleryImages.length * 3 + 1) return;
 
         const firstItem = children[1];
@@ -142,13 +178,25 @@ const Gallery = () => {
                     >
                         <style>{`.hide-scrollbar::-webkit-scrollbar { display: none; }`}</style>
 
+                        {loading && (
+                            <div className="w-full h-[400px] flex items-center justify-center text-gray-400">
+                                Loading gallery...
+                            </div>
+                        )}
+
+                        {!loading && galleryImages.length === 0 && (
+                            <div className="w-full h-[400px] flex items-center justify-center text-gray-400">
+                                No images yet. Coming soon!
+                            </div>
+                        )}
+
                         {/* Infinite Loop: Triplicated Data */}
-                        {[...galleryImages, ...galleryImages, ...galleryImages].map((image, index) => (
+                        {!loading && galleryImages.length > 0 && [...galleryImages, ...galleryImages, ...galleryImages].map((image, index) => (
                             <motion.div
                                 key={`${image.id}-${index}`}
                                 initial={{ opacity: 0, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: (index % 9) * 0.1 }}
+                                transition={{ duration: 0.5, delay: (index % 5) * 0.1 }}
                                 viewport={{ once: true }}
                                 className={`relative group rounded-2xl overflow-hidden flex-none h-[400px] md:h-[500px] snap-center ${image.aspect}`}
                                 onClick={() => setSelectedImage(image)}
@@ -212,6 +260,7 @@ const Gallery = () => {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                                if (currentIndex === -1) return;
                                 const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
                                 setSelectedImage(galleryImages[prevIndex]);
                             }}
@@ -224,6 +273,7 @@ const Gallery = () => {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+                                if (currentIndex === -1) return;
                                 const nextIndex = (currentIndex + 1) % galleryImages.length;
                                 setSelectedImage(galleryImages[nextIndex]);
                             }}

@@ -8,20 +8,28 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import Admin from './components/Admin';
+
 function App() {
+  const isAdmin = window.location.pathname === '/admin';
+
   return (
     <LanguageProvider>
-      <div className="App">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Services />
-          <Gallery />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      {isAdmin ? (
+        <Admin />
+      ) : (
+        <div className="App">
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Services />
+            <Gallery />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      )}
     </LanguageProvider>
   );
 }
