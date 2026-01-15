@@ -11,7 +11,19 @@ import Footer from './components/Footer';
 import Admin from './components/Admin';
 
 function App() {
-  const isAdmin = window.location.pathname === '/admin';
+  // Simple hash-based routing for GitHub Pages compatibility
+  const [isAdmin, setIsAdmin] = React.useState(
+    window.location.pathname === '/admin' || window.location.hash === '#/admin'
+  );
+
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      setIsAdmin(window.location.pathname === '/admin' || window.location.hash === '#/admin');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   return (
     <LanguageProvider>
