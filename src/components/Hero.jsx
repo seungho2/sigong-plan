@@ -15,8 +15,15 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="z-10 order-2 md:order-1"
                 >
-                    <h1 className={`text-3xl md:text-5xl mb-8 leading-tight text-[#1A1A1A] ${(t.hero.title.charCodeAt(0) < 128) ? 'hero-title-styled' : ''}`}>
-                        {t.hero.title}
+                    <h1 className={`text-3xl md:text-5xl mb-8 leading-tight text-[#1A1A1A] ${(typeof t.hero.title === 'string' && t.hero.title.charCodeAt(0) < 128) || (typeof t.hero.title === 'object' && t.hero.title.display.charCodeAt(0) < 128) ? 'hero-title-styled' : ''}`}>
+                        {typeof t.hero.title === 'object' ? (
+                            <>
+                                <span className="sr-only">{t.hero.title.seo}</span>
+                                <span aria-hidden="true">{t.hero.title.display}</span>
+                            </>
+                        ) : (
+                            t.hero.title
+                        )}
                     </h1>
 
                     <p className="text-xl text-gray-600 mb-4 max-w-md leading-snug">

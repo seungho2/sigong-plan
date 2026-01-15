@@ -8,7 +8,10 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Building your new space with expert hands.",
+      title: {
+        seo: "Montreal Renovation Experts, SI-GONG PLAN",
+        display: "Building your new space with expert hands."
+      },
       subtitle: "Customer satisfaction is our greatest asset. We deliver top-tier results with passion and expertise.",
       points: [
         "Residential / Commercial / Industrial & Other Spaces",
@@ -105,7 +108,10 @@ export const translations = {
       contact: "문의하기"
     },
     hero: {
-      title: "전문가의 손길로 새로운 공간을 완성합니다.",
+      title: {
+        seo: "몬트리올 레노베이션 전문가, 시공플랜 (SI-GONG PLAN)",
+        display: "전문가의 손길로 새로운 공간을 완성합니다."
+      },
       subtitle: "고객의 만족이 우리의 최고 자산 입니다. 전문성과 열정을 바탕으로 최상의 결과를 만들어 드립니다.",
       points: [
         "주거공간 / 상업공간 / 산업 및 기타 공간",
@@ -202,7 +208,10 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Façonner votre nouvel espace avec une main d'expert.",
+      title: {
+        seo: "Expert en Rénovation à Montréal, SI-Gong Plan",
+        display: "Façonner votre nouvel espace avec une main d'expert."
+      },
       subtitle: "La satisfaction du client est notre plus grand atout. Nous livrons des résultats supérieurs avec passion et expertise.",
       points: [
         "Résidentiel / Commercial / Industriel et autres espaces",
