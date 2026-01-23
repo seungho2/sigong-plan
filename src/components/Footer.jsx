@@ -57,26 +57,8 @@ const Footer = () => {
                 <div>
                     <div className="flex items-center gap-2 mb-3">
                         <h3 className="text-base font-bold">{t.footer.location}</h3>
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-700 hover:text-[var(--color-secondary)] transition-colors"
-                            aria-label="View on Google Maps"
-                        >
-                            <MapPin size={18} />
-                        </a>
+                        <MapPin size={18} className="text-gray-700" />
                     </div>
-                    <p className="text-[#1A1A1A] leading-relaxed">
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=3404+Av.+Prud'homme,+Montréal,+QC+H4A+3H5"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[var(--color-secondary)] transition-colors"
-                        >
-                            {t.footer.address}
-                        </a>
-                    </p>
                 </div>
 
                 {/* Column 3: Contact INFO */}
