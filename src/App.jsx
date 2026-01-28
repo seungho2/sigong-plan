@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 import Admin from './components/Admin';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   // Simple hash-based routing for GitHub Pages compatibility
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <LanguageProvider>
+      <CookieConsent />
       {isAdmin ? (
         <Admin />
       ) : (
